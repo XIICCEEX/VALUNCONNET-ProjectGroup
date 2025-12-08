@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VALUNCONNET_Activity</title> 
+    <link rel="stylesheet" href="css/Valun.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <i class="fa-solid fa-hand-holding-heart" style="font-size: 30px; color: #26c268;"></i>
+                <div class="logo-text">VALUNCONNET</div>
+            </div>
+            <div class="nav-links">
+                <a href="Feed.html" class="active">Activity</a>
+                <a href="profile.html">Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <div class="left-column">
+            <aside class="sidebar-box">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <label><i class="fa-solid fa-location-dot"></i> Location</label>
+                    <select class="filter-select"><option>All Locations</option></select>
+                </div>
+            </aside>
+
+            <section id="commentPanel" class="sidebar-box comment-panel">
+                <h3>Comments</h3>
+                <div id="commentList"></div>
+                <div class="comment-input-area">
+                    <textarea id="commentText" placeholder="Write a comment..."></textarea>
+                    <button id="sendComment"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </section>
+        </div>
+
+        <main class="feed-area" style="position: relative;">
+            
+            <div id="feedContainer"></div>
+
+            <div class="action-buttons-overlay" id="actionButtons">
+                <button class="btn-overlay btn-decline" id="btnDecline">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="btn-overlay btn-accept" id="btnAccept">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <div class="empty-text">You've caught up!</div>
+                <button class="btn-action btn-comment" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/feed.js"></script>
+  </body>
+</html>

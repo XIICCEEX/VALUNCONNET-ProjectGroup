@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VALUNCONNET_Login</title> 
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/login.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="logo-section">   
+        <h1 class="logo-text">VALUNCONNET</h1>
+        <div class="logo-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+      </div>
+
+      <form class="form" action="/checkLogin" method="post" accept-charset="utf-8">
+        <fieldset>
+          <legend>Member Login</legend>
+          
+          <div class="group-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <div class="input-group">
+              <span class="icon-user"><i class="fa-solid fa-user"></i></span>
+              <input type="text" name="username" placeholder="Email or Username" required>
+          </div>
+
+          <div class="input-group">
+              <span class="icon-lock"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Password" required>
+          </div>
+
+          <!-- ลบ style ออก -->
+          <span id="errordisplay"></span>
+
+          <input type="submit" value="Log In" id="login">
+        </fieldset>
+      </form>
+      
+      <p>
+        Don't have an account? 
+        <a href="register.html">Sign up</a>
+      </p>
+
+    </div>
+  </body>
+</html>

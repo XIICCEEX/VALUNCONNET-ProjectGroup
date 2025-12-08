@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Activity Detail</title>
+    <link rel="stylesheet" href="css/activity_detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    
+<a href="javascript:history.back()" class="close-viewer-btn">
+    <i class="fa-solid fa-xmark"></i>
+</a>
+
+    <div class="theater-wrapper">
+        
+        <div id="loadingState" class="loading-spinner">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </div>
+
+        <div class="viewer-card" id="detailContent" style="display: none;">
+            
+            <div class="viewer-media">
+                <img id="detailImg" src="" class="media-img" onerror="this.style.display='none'">
+            </div>
+
+            <div class="viewer-sidebar">
+                
+                <div class="sidebar-header">
+                    <div class="user-profile">
+                        <div class="avatar-circle" id="detailAvatar">U</div>
+                        <div class="user-meta">
+                            <h4 id="detailUser">Username</h4>
+                            <span id="detailDate">Date</span>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="sidebar-body">
+                    
+                    <div class="post-context">
+                        <h2 class="post-headline" id="detailTitle">Title</h2>
+                        <div class="post-tags">
+                            <span class="tag-badge date-tag"><i class="fa-regular fa-calendar"></i> <span id="badgeDate"></span></span>
+                            <span class="tag-badge loc-tag"><i class="fa-solid fa-location-dot"></i> Bangkok</span>
+                        </div>
+                        <p class="post-caption" id="detailDesc">Description...</p>
+                    </div>
+
+                    <hr class="separator">
+
+                    <div class="comments-area">
+                        <h5>Comments (<span id="commentCount">0</span>)</h5>
+                        <div id="detailCommentList">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-footer">
+                    <div class="input-group">
+                        <input type="text" id="detailCommentInput" placeholder="Write a comment...">
+                        <button id="detailSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/activity_detail.js?v=999"></script>
+  </body>
+</html>

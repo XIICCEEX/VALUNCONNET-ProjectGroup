@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Prompt', sans-serif;
+    background: linear-gradient(135deg, #e0e0e0 0%, #cfd8dc 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 20px solid #333; 
+    border-bottom: 20px solid #333; 
+}
+
+/* อันนี้เพิ่มเส้นเฉยๆ เดียวลืม */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #4cd964; 
+    z-index: 10;
+}
+
+body::before { top: 0; }
+body::after { bottom: 0; }
+
+#container {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* LOGO รูปมือหัว */
+.logo-section {
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    color: #4cd964;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.logo-icon {
+    font-size: 50px;
+    color: #4cd964;
+    margin: 10px 0;
+}
+
+/* อันนี้ พืนหลังLogin หลักนะ */
+.form fieldset {
+    background: rgba(160, 160, 160, 0.6); 
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); 
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    position: relative;
+}
+
+
+legend {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    float: left; 
+}
+
+/* icon คน 3 คนอะ */
+.group-icon {
+    display: block;
+    font-size: 40px;
+    margin: 0 auto 20px auto;
+    color: #333;
+    text-align: center;
+}
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* อันนี้ช่อน Username */
+.input-label-hidden {
+    display: none;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px 12px 45px; 
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', 'Prompt', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    box-shadow: 0 0 0 3px rgba(76, 217, 100, 0.4); 
+}
+
+/* สร้างไอคอนด้วย CSS (SVG Data URI) จะไม่ต้องโหลดไฟล์ภาพเพิ่ม */
+.icon-user, .icon-lock {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* รูปคน */
+.icon-user {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* แม่กุญแจ */
+.icon-lock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ปุ่มLoginนะ เพื่ออยากแก้ */
+input[type="submit"] {
+    background-color: #4cd964; 
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #43c158;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+#errordisplay {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* ลิ้งอันล่างสุดอะ */
+p {
+    margin-top: 25px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+a {
+    color: #4cd964;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+a:hover {
+    border-color: #4cd964;
+}
+
+/* Responsive */
+@media only screen and (width <= 500px){
+    body{
+        background-color: lightblue;
+    }
+} 
+
+
+ @media only screen and (max-width: 767px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto 20%;
+        grid-gap: 10px;
+    }
+    #header{
+        grid-column: 1 / span 2;
+    }
+    
+    #menu{
+        grid-column: 1 / span 2;
+        text-align: left;
+    }
+    
+    #menu div{
+        display: inline-block;
+    }
+
+    #main{
+        grid-column: 1 / span 1;
+    }
+    #right{
+        grid-column: 2 / span 1;
+    }
+    #footer{
+        grid-column: 1 / span 2;
+    }
+} 
+
+@media only screen and (max-width: 500px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+    #header{
+        grid-column: 1 / span 1;
+    }
+    
+    #menu{
+        grid-column: 1 / span 1;
+    }
+    
+    #main{
+        grid-column: 1 / span 1;
+    }
+    #right{
+        grid-column: 1 / span 1;
+    }
+    #footer{
+        grid-column: 1 / span 1;
+    }
+}  
+
+ #right img{
+    width:100%;
+}
+
+#right div{
+    margin-bottom: 20px;
+} 

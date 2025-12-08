@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Prompt', sans-serif;
+    
+    background: linear-gradient(180deg, #eef2f3 0%, #8e9eab 100%); 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 20px solid #333;
+    border-bottom: 20px solid #333;
+    overflow: hidden;
+}
+
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #4cd964;
+    z-index: 10;
+}
+body::before { top: 0; }
+body::after { bottom: 0; }
+
+#container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* Logo */
+.logo-section {
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    color: #4cd964; 
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.form fieldset {
+    background: #a5a9ac; 
+    border: none;
+    border-radius: 20px;
+    padding: 40px 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* ชองกรอก */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent; 
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #555;
+    outline: none;
+    font-family: 'Poppins', 'Prompt', sans-serif;
+    transition: all 0.3s;
+}
+
+/* ทำให้ขอบเป็นสีเขียว */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #4cd964;
+    box-shadow: 0 0 5px rgba(76, 217, 100, 0.5);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border: 2px solid #8add9b; 
+}
+
+/* Checkbox Section */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* ปุ่มกดปุ่ม Regis กับ Cancel */
+.button-group {
+    display: flex;
+    gap: 15px; 
+    justify-content: space-between;
+}
+
+
+input[type="submit"],
+.cancel-btn {
+    flex: 1; 
+    background-color: #6ce083; 
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    font-family: 'Poppins', 'Prompt', sans-serif;
+}
+
+
+/*  Logo   */
+.logo-section {
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    color: #4cd964; 
+    font-weight: 700;
+    font-size: 2rem; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.logo-icon {
+    font-size: 50px; 
+    color: #4cd964;
+    margin: 10px 0;
+}
+
+/* Hover  */
+input[type="submit"]:hover,
+.cancel-btn:hover {
+    background-color: #5ac470;
+}
+
+#errordisplay {
+    color: red;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+}
+/* Responsive */
+@media only screen and (width <= 500px){
+    body{
+        background-color: lightblue;
+    }
+} 
+
+
+ @media only screen and (max-width: 767px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto 20%;
+        grid-gap: 10px;
+    }
+    #header{
+        grid-column: 1 / span 2;
+    }
+    
+    #menu{
+        grid-column: 1 / span 2;
+        text-align: left;
+    }
+    
+    #menu div{
+        display: inline-block;
+    }
+
+    #main{
+        grid-column: 1 / span 1;
+    }
+    #right{
+        grid-column: 2 / span 1;
+    }
+    #footer{
+        grid-column: 1 / span 2;
+    }
+} 
+
+@media only screen and (max-width: 500px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+    #header{
+        grid-column: 1 / span 1;
+    }
+    
+    #menu{
+        grid-column: 1 / span 1;
+    }
+    
+    #main{
+        grid-column: 1 / span 1;
+    }
+    #right{
+        grid-column: 1 / span 1;
+    }
+    #footer{
+        grid-column: 1 / span 1;
+    }
+}  
+
+ #right img{
+    width:100%;
+}
+
+#right div{
+    margin-bottom: 20px;
+} 

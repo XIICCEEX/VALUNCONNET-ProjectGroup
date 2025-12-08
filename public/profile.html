@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VALUNCONNET_Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <i class="fa-solid fa-hand-holding-heart logo-icon"></i>
+                <div class="logo-text">VALUNCONNET</div>
+            </div>
+            <div class="nav-links">
+                <a href="Feed.html">Activity</a>
+                <a href="profile.html" class="active">Profile</a>
+                <a href="/logout" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        
+        <div class="profile-card">
+            <form id="avatarForm" action="/profilepic" method="post" enctype="multipart/form-data">
+                <input type="file" name="avatar" id="avatarFile" accept="image/*" hidden>
+                <div class="avatar-container" id="changeAvatarBtn">
+                    <img src="img/avatar.png" alt="Profile" id="profileAvatar" class="profile-avatar">
+                    <div class="edit-avatar-icon"><i class="fa-solid fa-camera"></i></div>
+                </div>
+            </form>
+
+            <div class="profile-info">
+                <h1 class="profile-name" id="profileName">Loading...</h1>
+
+                <div class="profile-actions">
+                    <button class="btn-profile btn-edit" id="openEditModal">
+                        <i class="fa-solid fa-pen"></i> Edit Profile
+                    </button>
+                    <button class="btn-profile btn-post" id="openPostModal">
+                        <i class="fa-solid fa-plus"></i> Create Post
+                    </button>
+                    <button class="btn-profile btn-mypost" id="toggleMyPostBtn">
+                        <i class="fa-solid fa-folder-open"></i> My Post
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contentArea">
+            
+            <div id="tabHistory">
+                <h3 class="section-title">Activity History</h3>
+                <div class="badges-grid" id="badgeContainer"></div>
+            </div>
+
+            <div id="tabMyPosts">
+                 <div class="mypost-header">
+                    <h3 class="section-title">My Created Posts</h3>
+                    <button id="backToHistoryBtn" class="btn-back">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+                </div>
+                <div class="badges-grid" id="myPostContainer"></div>
+            </div>
+
+        </div>
+
+    </div> <div id="editPostModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Post</h3>
+            <form action="/editPost" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="post_id" id="editPostId">
+                <label>Activity Title</label>
+                <input type="text" name="title" id="editTitle" required>
+                <label>Description</label>
+                <textarea name="message" id="editMessage" required></textarea>
+                <label>Event Date</label>
+                <input type="date" name="event_date" id="editDate" required>
+                <label>Change Images (Optional)</label>
+                <input type="file" name="postImg" accept="image/*" multiple>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-profile btn-secondary" id="closeEditPostModal">Cancel</button>
+                    <button type="submit" class="btn-profile btn-edit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Username</h3>
+            <form action="/updateUsername" method="post">
+                <label>New Username</label>
+                <input type="text" name="new_username" placeholder="Enter new username" required>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-profile btn-secondary" id="closeModal">Cancel</button>
+                    <button type="submit" class="btn-profile btn-edit">Save Change</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <h3>Create Activity Post</h3>
+            <form action="/addPost" method="post" enctype="multipart/form-data">
+                <label>Activity Title</label>
+                <input type="text" name="title" required placeholder="e.g. Beach Cleaning">
+                <label>Description</label>
+                <textarea name="message" required placeholder="Details about activity..."></textarea>
+                <label>Event Date</label>
+                <input type="date" name="event_date" required>
+                <label>Cover Image (Max 10)</label>
+                <input type="file" name="postImg" accept="image/*" multiple required>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-profile btn-secondary" id="closePostModal">Cancel</button>
+                    <button type="submit" class="btn-profile btn-edit">Post Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>
